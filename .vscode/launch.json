@@ -1,0 +1,11 @@
+{
+  "configurations": [
+  {
+    "name": "Go, Debug It!",
+    "type": "go",
+    "request": "launch",
+    "mode": "auto",
+    "program": "src/main.go",
+  }
+  ]
+}

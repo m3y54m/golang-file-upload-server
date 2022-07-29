@@ -5,10 +5,12 @@ import (
 	"net/http"
 )
 
+func fileUploadHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "File Uploader: %q", r.URL.Path)
+}
+
 func setupRoutes() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, %q", r.URL.Path)
-	})
+	http.HandleFunc("/", fileUploadHandler)
 	http.ListenAndServe(":8080", nil)
 }
 

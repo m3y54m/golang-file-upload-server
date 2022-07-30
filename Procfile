@@ -1,0 +1,1 @@
+web: bin/golang-file-upload-server

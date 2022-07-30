@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	call("http://localhost:8080/", "POST")
+	call("http://localhost:80/", "POST")
 }
 
 func call(urlPath, method string) error {

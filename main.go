@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httputil"
+	"os"
 )
 
 func createImage(w http.ResponseWriter, r *http.Request) {
@@ -69,5 +70,7 @@ func createImage(w http.ResponseWriter, r *http.Request) {
 func main() {
 	createImageHandler := http.HandlerFunc(createImage)
 	http.Handle("/", createImageHandler)
-	http.ListenAndServe(":80", nil)
+	port := os.Getenv("PORT")
+	fmt.Println("Starting server on port " + port)
+	http.ListenAndServe(":"+port, nil)
 }

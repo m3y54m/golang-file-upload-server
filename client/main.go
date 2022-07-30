@@ -13,7 +13,8 @@ import (
 )
 
 func main() {
-	call("http://localhost:80/", "POST")
+	port := os.Getenv("PORT")
+	call("http://localhost:"+port+"/", "POST")
 }
 
 func call(urlPath, method string) error {

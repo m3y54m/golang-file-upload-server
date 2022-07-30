@@ -58,13 +58,16 @@ func createImage(w http.ResponseWriter, r *http.Request) {
 		// write this byte array to our temporary file
 		tempFile.Write(fileBytes)
 
+		// return the file name
+		fmt.Fprintf(w, "Uploaded file: %s\n", tempFile.Name())
+
 	} else {
 		fmt.Fprintf(w, "Invalid Request Method. Use POST instead.")
 		return
 	}
 
 	// return that we have successfully uploaded our file!
-	fmt.Fprintf(w, "Successfully Uploaded File\n")
+	fmt.Fprintf(w, "Upload Successful!\n")
 }
 
 func main() {

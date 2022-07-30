@@ -24,7 +24,7 @@ func call(urlPath, method string) error {
 	// New multipart writer.
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
-	fw, err := writer.CreateFormFile("photo", "uploaded_image.jpg")
+	fw, err := writer.CreateFormFile("myImage", "uploaded_image.jpg")
 	if err != nil {
 		fmt.Println(err)
 		return err

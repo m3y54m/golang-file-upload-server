@@ -10,6 +10,13 @@ curl -X GET localhost:8080
 curl -X PUT localhost:8080
 ```
 
+## Upload a file using cURL
+
+```console
+curl -X POST -F 'myImage=@bcs_640x480.jpg' http://localhost:8080
+```
+
+
 ## References
 
 - [Debugging Go with VS Code](https://blog.logrocket.com/debugging-go-vs-code/)
@@ -20,3 +27,5 @@ curl -X PUT localhost:8080
 - [Working with Images in Go](https://www.devdungeon.com/content/working-images-go)
 - [How to process file uploads in Go](https://freshman.tech/file-upload-golang/)
 - [Print HTTP request/response for debugging in Go](https://gosamples.dev/print-http-request-response/)
+- [What Is Octet-Stream? - A Complete Overview](https://isotropic.co/what-is-octet-stream/)
+- [HTTP send/receive jpeg file in request body example in Go (Golang)](https://golangbyexample.com/jpeg-post-http-go/)

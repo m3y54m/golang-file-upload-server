@@ -24,14 +24,14 @@ func createImage(w http.ResponseWriter, request *http.Request) {
 	}
 	fmt.Println(string(requestDump))
 
-	err = request.ParseMultipartForm(32 << 20) // maxMemory 32MB
+	err = request.ParseMultipartForm(10 << 20) // maxMemory 10 MB (10 * 2^20)
 	if err != nil {
 		fmt.Println(err)
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
 	//Access the photo key - First Approach
-	file, h, err := request.FormFile("photo")
+	file, h, err := request.FormFile("myImage")
 	if err != nil {
 		fmt.Println(err)
 		w.WriteHeader(http.StatusBadRequest)
